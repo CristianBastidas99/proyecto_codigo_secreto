@@ -59,7 +59,7 @@ public class Desencriptar {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Ubo un erro al leer el archivo");
+			JOptionPane.showMessageDialog(null, "Hubo un erro al leer el archivo");
 		}
 
 		return codigo_des;

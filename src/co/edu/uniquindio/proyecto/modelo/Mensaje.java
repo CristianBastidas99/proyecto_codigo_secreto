@@ -26,30 +26,19 @@ public class Mensaje {
 		this.desencriptar = new Desencriptar();
 	}
 
-	public static void main(String[] args) {
-
-		Mensaje mensaje = new Mensaje();
-
-		String strng = "JORGEGUADAL";
-		String nombre = "COMPUTADORA";
-
-		String salida = mensaje.encriptarMensaje(strng, nombre);
-
-		System.out.println(salida);
-
-		salida = mensaje.desencriptarMensaje(nombre);
-
-		System.out.println(salida);
-	}
-
+	
 	public String encriptarMensaje(String mensaje, String nombre_archivo) {
 
 		String mensajeSalida = "No se pudo Encriptar";
 
 		if (verificarValidezCampos(mensaje) && verificarValidezCampos(nombre_archivo)) {
+			if (mensaje.length() == nombre_archivo.length()) {
 
-			this.encriptar = new Encriptar(URL_ARCHIVO + nombre_archivo + ".txt", nombre_archivo, mensaje);
-			mensajeSalida = this.encriptar.ejecutar();
+				this.encriptar = new Encriptar(URL_ARCHIVO + nombre_archivo + ".txt", nombre_archivo, mensaje);
+				mensajeSalida = this.encriptar.ejecutar();
+			}else {
+				JOptionPane.showMessageDialog(null, "Los campos deben tener la misma longitud");
+			}
 		}
 		return mensajeSalida;
 	}
