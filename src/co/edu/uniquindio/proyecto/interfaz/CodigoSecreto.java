@@ -14,6 +14,7 @@ import co.edu.uniquindio.proyecto.modelo.Mensaje;
 
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 
 public class CodigoSecreto implements ActionListener{
 
